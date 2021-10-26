@@ -1,0 +1,49 @@
+﻿@{ 
+    var authentication = _httpContextAccessor.HttpContext.User.Identity;
+}
+<!-- Header -->
+<header id="page-header">
+    <!-- Header Content -->
+    <div class="content content-full">
+
+            <div id="mk-header">
+                <div class="mk-header-left d-flex justify-content-start">
+                    <!-- Logo -->
+                    <div class="mk-logo-container d-inline-block">
+                        <a class="mk-logo text-gray-lighter" href="/">
+                            Notebooks
+                        </a>
+                    </div>
+                    <!-- END Logo -->
+                </div>
+                <div class="mk-header-right d-flex justify-content-end">
+                    <a class="btn btn-dual d-sm-inline-block mr-2" href="/note/add">
+                        <i class="fa fa-fw fa-pencil-alt mr-1"></i>
+                        <span class="d-none d-md-inline-block">Add Note</span>
+                    </a>
+                    <!-- User Profile -->
+                    @if (!authentication.IsAuthenticated)
+                    {
+                        <a class="btn btn-dual d-sm-inline-block" href="/auth/signin">
+                            <i class="fa fa-fw fa-user-circle mr-1"></i>
+                            <span class="d-none d-md-inline-block">Sign-In</span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-dual d-sm-inline-block mr-2" href="/notes/manage">
+                            <i class="fa fa-sticky-note mr-1"></i>
+                            <span class="d-none d-md-inline-block">My Notes</span>
+                        </a>
+
+                        <a class="btn btn-dual d-sm-inline-block" href="/auth/signout">
+                            <i class="fa fa-fw fa-user-circle mr-1"></i>
+                            <span class="d-none d-md-inline-block">Sign-Out</span>
+                        </a>
+                    }
+                </div>
+            </div>
+
+    </div> <!-- END Header Content -->
+</header>
+<!-- END Header -->

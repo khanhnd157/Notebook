@@ -1,0 +1,41 @@
+﻿@model NotebookModel
+@{
+    ViewData["Title"] = Model?.Title??"";
+}
+
+<div class="content content-full">
+
+    <div class="mk-content-heading">
+        <div class="d-flex justify-content-between">
+            <h2 class="font-w600 font-size-h3 text-gray-dark mb-0">
+                @(Model?.Title??"")
+            </h2>
+
+            @*<a href="javascript:void();" class="font-w600 font-size-h3 text-gray-dark">
+                <i class="fa fa-rss"></i>
+            </a>*@
+        </div>
+    </div>
+
+    <data-content>
+
+        <div class="block block-rounded block-fx-shadow">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">@Model.Title <small>@Model.Access</small></h3>
+
+                <div class="block-options">
+                    <button type="button" id="btn-copy-clipboard" class="btn-block-option"> <i class="far fa-copy"></i> </button>
+                </div>
+            </div>
+            <div id="notebook-content" class="block-content pb-3">
+                @Html.Raw(Model.Note)
+            </div>
+        </div>
+
+    </data-content>
+
+</div>
+
+@section ScriptExtend{
+    <script src="~/assets/default/notebook.min.js"></script>
+}

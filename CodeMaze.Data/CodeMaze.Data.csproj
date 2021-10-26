@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CodeMaze.Cryptography" Version="1.0.0" />
+    <PackageReference Include="MazeCore.MongoDb" Version="1.0.215" />
+    <PackageReference Include="MongoDB.Bson" Version="2.13.2" />
+  </ItemGroup>
+
+</Project>

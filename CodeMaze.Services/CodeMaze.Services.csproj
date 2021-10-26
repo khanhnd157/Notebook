@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="CodeMaze.Cryptography" Version="1.0.0" />
+    <PackageReference Include="MazeCore.MongoDb" Version="1.0.215" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeMaze.Data\CodeMaze.Data.csproj" />
+    <ProjectReference Include="..\CodeMaze.Models\CodeMaze.Models.csproj" />
+  </ItemGroup>
+
+</Project>

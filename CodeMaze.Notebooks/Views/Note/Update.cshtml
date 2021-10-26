@@ -1,0 +1,94 @@
+﻿@model NotebookModel
+@{
+    ViewData["Title"] = "Edit notebook";
+}
+@{
+    var authentication = _httpContextAccessor.HttpContext.User.Identity;
+}
+
+<div class="content content-full">
+
+    <div class="mk-content-heading">
+        <div class="d-flex justify-content-between">
+            <h2 class="font-w600 font-size-h3 text-gray-dark mb-0">
+                Edit notebook
+            </h2>
+
+            @*<a href="javascript:void();" class="font-w600 font-size-h3 text-gray-dark">
+                    <i class="fa fa-rss"></i>
+                </a>*@
+        </div>
+    </div>
+
+    <data-content>
+
+        <form action="" method="POST" enctype="multipart/form-data" accept-charset="utf-8">
+
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="si si-pencil"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" id="note-title" name="title"
+                           placeholder="Enter your title" value="@Model.Title" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" name="code" value="@Model.Code" />
+                <input type="hidden" name="Id" value="@Model.Id" />
+
+                <textarea name="note" id="note" class="form-control js-summernote" cols="50" rows="10"
+                          placeholder="Your note ..." required>@Html.Raw(Model.Note)</textarea>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7 col-sm-6 mb-2">
+                        <select class="js-select2 form-control mb-sm-2" id="note-access" name="access"
+                                style="width: 100%;" data-placeholder="Choose one.." data-selected="@Model.Access" required>
+                            <option></option>
+                            <!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                            <option value="public" selected="@(Model.Access.Equals("public")?"selected":false)">Public</option>
+                            @if (authentication.IsAuthenticated)
+                            {
+                                <option value="private" selected="@(Model.Access.Equals("private")?"selected":false)">Private</option>
+                            }
+                            <option value="protected" selected="@(Model.Access.Equals("protected")?"selected":false)">Passsword protected</option>
+
+                        </select>
+                    </div>
+
+                    <div class="col-md-5 col-sm-6 mr-0 note-password-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="si si-key"></i>
+                                </span>
+                            </div>
+                            <input type="password" class="form-control" id="note-password" name="password" value="_******_"
+                                   placeholder="Enter your password">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary pl-3 pr-3">
+                    <i class="si si-cloud-upload mr-2"></i>
+                    Save
+                </button>
+            </div>
+        </form>
+
+    </data-content>
+
+</div>
+
+@section ScriptExtend{
+    <script src="~/assets/default/notebook.min.js"></script>
+}

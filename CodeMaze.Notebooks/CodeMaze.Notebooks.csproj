@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.125</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="CodeMaze.Cryptography" Version="1.0.0" />
+    <PackageReference Include="CodeMazeNET.TextGenerator" Version="1.0.235" />
+    <PackageReference Include="MazeCore.MongoDb" Version="1.0.215" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeMaze.Data\CodeMaze.Data.csproj" />
+    <ProjectReference Include="..\CodeMaze.Services\CodeMaze.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MazeCore.MongoDb">
+      <HintPath>MazeCore.MongoDb.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\default\css\" />
+  </ItemGroup>
+
+</Project>

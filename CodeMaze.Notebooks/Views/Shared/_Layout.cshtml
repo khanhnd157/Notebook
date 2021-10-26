@@ -1,0 +1,82 @@
+﻿@{
+    var title = $"{ViewData["Title"] ?? "Home"} - Notebooks";
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>@title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="https://notebook.codemaze.net" />
+
+    <meta name="description" content="@title">
+    <meta name="author" content="mazek@khanhnd.info">
+    <meta name="robots" content="index,follow,all">
+    <meta name="keywords" content="Notebook, Notepad, CodemazeNet" />
+
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="@title">
+    <meta property="og:site_name" content="Notebooks">
+    <meta property="og:description" content="Notebooks">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://notebook.codemaze.net">
+    <meta property="og:image" content="~/favicon-192x192.png">
+    <meta property="og:locale" content="vi_VN" />
+
+    <meta http-equiv="content-language" content="vi" />
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="~/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/apple-touch-icon-180x180.png">
+    <!-- END Icons -->
+    <!-- Page JS Plugins CSS -->
+    <link rel="stylesheet" href="~/assets/js/plugins/highlightjs/styles/atom-one-light.css">
+    <link rel="stylesheet" href="~/assets/js/plugins/magnific-popup/magnific-popup.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/assets/js/plugins/summernote/summernote-bs4.css">
+    <!-- select2 -->
+    <link rel="stylesheet" href="~/assets/js/plugins/select2/css/select2.min.css">
+
+    <!-- Fonts framework -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="~/assets/default/css/theme.bundle.min.css" asp-append-version="true" />
+    <!-- END Stylesheets -->
+    @RenderSection("StyleLibs", false)
+</head>
+<body>
+    <div id="page-container" class="sidebar-dark enable-page-overlay side-scroll page-header-fixed page-header-dark main-content-boxed">
+        <!-- Header -->
+        <partial name="Clients/_Header" />
+        <!-- END Header -->
+        <!-- Main Container -->
+        <main id="main-container">
+            <!-- Page Content -->
+            @RenderBody()
+            <!-- END Page Content -->
+        </main>
+        <!-- END Main Container -->
+        <!-- Footer -->
+        <partial name="Clients/_Footer" />
+        <!-- END Footer -->
+    </div>
+    <!-- END Page Container -->
+
+    <script src="~/assets/default/js/app.core.bundle.min.js"></script>
+
+    <!-- Page JS Plugins -->
+    <script src="~/assets/js/plugins/highlightjs/highlight.pack.min.js"></script>
+    <script src="~/assets/js/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets/js/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="~/assets/js/plugins/select2/js/select2.full.min.js"></script>
+
+    @RenderSection("JsLibs", false)
+    @RenderSection("ScriptExtend", false)
+
+    <script>jQuery(function () { Mazek.helpers(['select2', 'summernote', 'highlightjs', 'magnific-popup']); });</script>
+
+</body>
+</html>

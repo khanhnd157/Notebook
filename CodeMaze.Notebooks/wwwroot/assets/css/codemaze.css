@@ -1,0 +1,171 @@
+/*!
+ * Notebook
+ * @author Duy Khanh
+ * Copyright (c) 2021
+ */
+:root {
+    --logo-transform-left: 20px;
+    --logo-transform-right: -20px;
+}
+
+#page-header .content {
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+}
+
+.mk-logo {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: .05em;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+    .mk-logo:hover {
+        color: #FFFFFF;
+    }
+
+.mk-logo-container {
+    margin-left: -20px;
+}
+
+    .mk-logo-container a::after,
+    .mk-logo-container a::before {
+        -moz-transition: -moz-transform .3s, opacity .2s;
+        -webkit-transition: -webkit-transform .3s, opacity .2s;
+        color: var(--white);
+        display: inline-block;
+        font-size: 22px;
+        line-height: 16px;
+        opacity: 0;
+        transition: transform .3s, opacity .2s;
+    }
+
+    .mk-logo-container a::before {
+        -moz-transform: translateX(var(--logo-transform-left));
+        -webkit-transform: translateX(var(--logo-transform-left));
+        content: '<';
+        transform: translateX(var(--logo-transform-left))
+    }
+
+    .mk-logo-container a::after {
+        -moz-transform: translateX(var(--logo-transform-right));
+        -webkit-transform: translateX(var(--logo-transform-right));
+        content: '>';
+        transform: translateX(var(--logo-transform-right))
+    }
+
+    .mk-logo-container a:focus::after,
+    .mk-logo-container a:focus::before,
+    .mk-logo-container a:hover::after,
+    .mk-logo-container a:hover::before {
+        opacity: 0.9;
+    }
+
+    .mk-logo-container a:focus::before,
+    .mk-logo-container a:hover::before {
+        -moz-transform: translateX(5px);
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px)
+    }
+
+    .mk-logo-container a:focus::after,
+    .mk-logo-container a:hover::after {
+        -moz-transform: translateX(-5px);
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px)
+    }
+
+    .mk-logo-container a:focus,
+    .mk-logo-container a:hover {
+        outline: 0
+    }
+
+.mk-content-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+    .mk-content-header .mk-content-right {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+        .mk-content-header .mk-content-right form {
+            padding-right: 14px;
+            padding-left: 7px;
+            margin-right: -14px;
+            width: 100%;
+        }
+
+    .mk-content-header .mk-content-left {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+.mk-content-heading {
+    padding-top: 0;
+    margin-bottom: 1.75rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.75;
+    border-bottom: 1px solid #e4e9f3;
+}
+
+#mk-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -14 px;
+    margin-left: -14 px;
+}
+
+    #mk-header .mk-header-left {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    #mk-header .mk-header-right {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+
+    @media (max-width: 768px) {
+        #mk-header .mk-header-left {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        #mk-header .mk-header-right {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+
+.img-fluid{
+    width: 100%;
+}
+
+.selectable {
+    -webkit-touch-callout: all; /* iOS Safari */
+    -webkit-user-select: all; /* Safari */
+    -khtml-user-select: all; /* Konqueror HTML */
+    -moz-user-select: all; /* Firefox */
+    -ms-user-select: all; /* Internet Explorer/Edge */
+    user-select: all; /* Chrome and Opera */
+}
+
+.block-content p, .block-content .push, .block-content .block, .block-content .items-push > div {
+    margin-bottom: 1rem !important;
+}

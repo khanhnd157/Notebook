@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Check access";
+}
+
+<div class="content content-full">
+
+    <div class="mk-content-heading">
+        <div class="d-flex justify-content-between">
+            <h2 class="font-w600 font-size-h3 text-gray-dark mb-0">
+                @(ViewData["NOTE_TITLE"] ?? "Enter security code")
+            </h2>
+
+            @*<a href="javascript:void();" class="font-w600 font-size-h3 text-gray-dark">
+                <i class="fa fa-rss"></i>
+            </a>*@
+        </div>
+    </div>
+
+    <data-content>
+
+        <div class="block block-bordered block-rounded">
+            <div class="block-content block-content-full">
+                <form action="" method="POST" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
+                    <div class="input-group">
+                        <input type="password" name="password" class="form-control form-control-alt"
+                               placeholder="Enter your code to unlock">
+
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary border-0 font-size-base">
+                                <i class="si si-lock-open mr-1"></i> 
+                                <span class="d-none d-sm-inline-block">
+                                    Unlock
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </data-content>
+
+</div>
+
+@section ScriptExtend{
+    <script src="~/assets/default/notebook.min.js"></script>
+}

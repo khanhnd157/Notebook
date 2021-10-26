@@ -1,0 +1,78 @@
+[
+  {
+    "outputFileName": "wwwroot/assets/default/js/app.core.bundle.js",
+    "inputFiles": [
+      "wwwroot/assets/js/maze.core.min.js",
+      "wwwroot/assets/js/maze.app.min.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/assets/default/css/theme.bundle.css",
+    "inputFiles": [
+      "wwwroot/assets/css/main.css",
+      "wwwroot/assets/css/themes/mazek.css",
+      "wwwroot/assets/css/codemaze.css",
+      "wwwroot/assets/css/customize.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/assets/default/js/posts/posts.bundle.js",
+    "inputFiles": [
+      "wwwroot/assets/js/plugins/jquery-validation/jquery.validate.js",
+      "wwwroot/assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js",
+      "wwwroot/libs/holder-v2.9.0/holder.js",
+      "wwwroot/libs/lazyload.js",
+      "wwwroot/assets/default/js/posts/post.view.js",
+      "wwwroot/assets/default/js/posts/post.comment.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/assets/default/js/auth/signin.bundle.js",
+    "inputFiles": [
+      "wwwroot/assets/js/maze.core.min.js",
+      "wwwroot/assets/js/maze.app.min.js",
+      "wwwroot/assets/js/plugins/jquery-validation/jquery.validate.min.js",
+      "wwwroot/assets/default/js/auth/login.validate.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/assets/default/js/auth/forgot.password.bundle.js",
+    "inputFiles": [
+      "wwwroot/assets/js/maze.core.min.js",
+      "wwwroot/assets/js/maze.app.min.js",
+      "wwwroot/assets/js/plugins/jquery-validation/jquery.validate.min.js",
+      "wwwroot/assets/default/js/auth/forgot.password.validate.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/assets/default/js/posts/manage.update.min.js",
+    "inputFiles": [
+      "wwwroot/assets/default/js/posts/manage.update.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/assets/default/js/category/manage.update.min.js",
+    "inputFiles": [
+      "wwwroot/assets/default/js/category/manage.update.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/assets/css/customize.min.css",
+    "inputFiles": [
+      "wwwroot/assets/css/customize.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/assets/default/js/app.sweetalert.bundle.js",
+    "inputFiles": [
+      "wwwroot/assets/js/plugins/sweetalert2/sweetalert2.min.js",
+      "wwwroot/assets/default/common/sweetalert.extend.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/assets/default/notebook.min.js",
+    "inputFiles": [
+      "wwwroot/assets/default/notebook.js"
+    ]
+  }
+]

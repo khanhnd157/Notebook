@@ -1,0 +1,117 @@
+﻿@{
+    Layout = null;
+}
+@model CodeMaze.Models.UserModel
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Sign-In | Notebooks</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="https://notebook.codemaze.net" />
+
+    <meta name="description" content="Sign-In Notebooks">
+    <meta name="author" content="mazek@khanhnd.info">
+    <meta name="robots" content="index,follow,all">
+    <meta name="keywords" content="Notebook, Notepad, CodemazeNet" />
+
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Sign-In Notebooks">
+    <meta property="og:site_name" content="Notebooks">
+    <meta property="og:description" content="Notebooks">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://notebook.codemaze.net">
+    <meta property="og:image" content="~/favicon-192x192.png">
+    <meta property="og:locale" content="vi_VN" />
+
+    <meta http-equiv="content-language" content="vi" />
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="~/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/apple-touch-icon-180x180.png">
+    <!-- END Icons -->
+
+    <!-- Fonts framework -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="~/assets/default/css/theme.bundle.min.css" />
+    <!-- END Stylesheets -->
+</head>
+<body>
+
+    <div id="page-container">
+        <!-- Main Container -->
+        <main id="main-container">
+            <!-- Page Content -->
+            <div class="bg-image" style="background-image: url('/assets/media/photos/photo22@2x.jpg');">
+                <div class="row no-gutters justify-content-center bg-primary-dark-op">
+                    <div class="hero-static col-sm-8 col-md-6 col-xl-4 d-flex align-items-center p-2 px-sm-0">
+                        <!-- Sign In Block -->
+                        <div class="block block-transparent block-rounded w-100 mb-0 overflow-hidden">
+                            <div class="block-content block-content-full px-lg-5 px-xl-6 py-4 py-md-5 py-lg-6 bg-white">
+                                <!-- Header -->
+                                <div class="mb-2 text-center">
+                                    <a class="link-fx font-w700 font-size-h1" href="~/index.html">
+                                        <span class="text-dark">Note</span><span class="text-primary">books</span>
+                                    </a>
+                                    <p class="text-uppercase font-w700 font-size-sm text-muted">Welcome Back</p>
+                                </div>
+                                <!-- END Header -->
+                                <!-- Sign In Form -->
+                                <form class="js-validation-login" method="POST" accept-charset="utf-8">
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="login-username" name="username" placeholder="Username or email">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="fa fa-user-circle"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" id="login-password" name="password" placeholder="Password">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="fa fa-key"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group d-sm-flex justify-content-sm-between align-items-sm-center text-center text-sm-left">
+                                        <div class="custom-control custom-checkbox custom-control-primary">
+                                            <input type="checkbox" class="custom-control-input" id="login-remember-me" name="rememberme" value="true" checked>
+                                            <label class="custom-control-label" for="login-remember-me">Remember Me</label>
+                                        </div>
+                                        <div class="font-w600 font-size-sm py-1">
+                                            <a href="/auth/forgot-password.html">Forgot Password?</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <button type="submit" class="btn btn-hero-primary">
+                                            <i class="fa fa-fw fa-sign-in-alt mr-1"></i> Sign In
+                                        </button>
+                                    </div>
+                                </form>
+                                <!-- END Sign In Form -->
+                            </div>
+                        </div>
+                        <!-- END Sign In Block -->
+                    </div>
+                </div>
+            </div>
+            <!-- END Page Content -->
+        </main>
+        <!-- END Main Container -->
+    </div>
+    <script src="~/assets/default/js/auth/signin.bundle.min.js"></script>
+
+</body>
+</html>

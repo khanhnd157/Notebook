@@ -1,0 +1,77 @@
+﻿@model List<NotebookModel>
+@{
+    ViewData["Title"] = "My Notes";
+}
+
+@section StyleLibs{
+    <link href="~/assets/js/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+}
+
+@section JsLibs{
+    <script src="~/assets/js/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/assets/default/js/app.sweetalert.bundle.min.js"></script>
+}
+
+@section ScriptExtend{
+    <script src="~/assets/default/notebook.js"></script>
+}
+
+<div class="content content-full">
+
+    <div class="mk-content-heading">
+        <div class="d-flex justify-content-between">
+            <h2 class="font-w600 font-size-h3 text-gray-dark mb-0">
+                My Notes
+            </h2>
+
+            @*<a href="javascript:void();" class="font-w600 font-size-h3 text-gray-dark">
+                    <i class="fa fa-rss"></i>
+                </a>*@
+        </div>
+    </div>
+
+    <data-content>
+
+        <div class="row items-push">
+
+            @if (Model.Any())
+            {
+                foreach (var note in Model)
+                {
+                    var _bg = note.Access.Equals("private") ?
+                        "bg-gd-dusk-op" : note.Access.Equals("protected") ? "bg-gd-sun-op" : "bg-body-light";
+
+                    var _fg = !note.Access.Equals("public") ? "text-white-75" : string.Empty;
+                    <div class="col-lg-4" id="_id@(note.Id)" >
+                        <!-- Story #15 -->
+                        <div class="block block-rounded block-link-pop mb-0">
+                            <div class="block-content @_bg">
+                                <a href="/note/@note.Code" class="@_fg">
+                                    <h4 class="mb-1">@note.Title</h4>
+                                </a>
+
+                                <p class="fs-sm @_fg">
+                                    <i class="fa fa-fw fa-pencil-alt opacity-50 me-1"></i> on @note.UpdatedAt.ToString("dd/MM/yyyy")
+                                </p>
+                            </div>
+
+                            <div class="block-content @_bg">
+                                <div class="d-flex justify-content-between push">
+                                    <a class="btn btn-sm btn-alt-info" href="/note/edit/@note.Id">
+                                        <i class="fa fa-fw fa-pencil-alt opacity-50 me-1"></i> Edit
+                                    </a>
+                                    <a class="btn btn-sm btn-alt-danger btn-note-delete" data-id="@note.Id" href="javascript:void(0)">
+                                        <i class="fa fa-fw fa-trash-alt me-1"></i> Delete
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Story #15 -->
+                    </div>
+                }
+            }
+            @Html.AntiForgeryToken()
+        </div>
+    </data-content>
+
+</div>
